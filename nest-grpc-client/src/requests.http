@@ -1,0 +1,6 @@
+POST http://localhost:3000/ping
+content-type: application/json
+
+{
+  "echo": "ping"
+}

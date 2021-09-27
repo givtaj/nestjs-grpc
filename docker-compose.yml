@@ -1,0 +1,17 @@
+version: '3'
+services:
+  msserver:
+    build:
+      context: ./nest-grpc-ms
+      dockerfile: Dockerfile
+    command: npm start
+
+  msclient:
+    build:
+      context: ./nest-grpc-client
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    depends_on:
+      - msserver
+    command: npm start
