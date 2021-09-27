@@ -4,6 +4,8 @@ services:
     build:
       context: ./nest-grpc-ms
       dockerfile: Dockerfile
+    ports:
+      - 9090:9090
     command: npm start
 
   msclient:

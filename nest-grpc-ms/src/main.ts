@@ -1,14 +1,15 @@
 import { Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import { Transport } from '@nestjs/microservices';
+import { Transport, GrpcOptions } from '@nestjs/microservices';
 import { join } from 'path';
 
 const logger = new Logger('Main');
 
-const microserviceOptions = {
+const microserviceOptions: GrpcOptions = {
   transport: Transport.GRPC,
   options: {
+    url: '0.0.0.0:9090',
     package: 'app',
     protoPath: join(__dirname, '../src/app.proto'),
   },
