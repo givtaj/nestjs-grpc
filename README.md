@@ -1,17 +1,18 @@
-# nestjs-grpc
-
 ## Running the app
 
+### docker compose
 ```bash
-# docker compose
 $ docker compose up
 ```
 
-## Test
+## Testing
 
+### e2e tests
 ```bash
-
-# e2e tests on client node
 $ npm run test:e2e app
+```
 
+### curl
+```bash
+$ curl -d '{"echo": "ping"}' -H "Content-Type: application/json" -X POST http://localhost:3000/ping
 ```
